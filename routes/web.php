@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Blog;
 use App\Models\Category;
 use App\Models\User;
+use App\Http\Controllers\BlogController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,22 +16,27 @@ use App\Models\User;
 |
 */
 
-Route::get('/', function () {
-    return view('blogs',[
-        'blogs'=>Blog::all()
-    ]);
-});
+Route::get('/',[BlogController::class,'index']);
 
 Route::get('/categories/{category:slug}', function(Category $category){
     return view('blogs',[
-        'blogs'=>$category->blogs
+        'blogs'=>$category->blogs,
+        'categories'=>Category::all(),
+        'currentCategory'=>$category
     ]);
 });
 
 Route::get('/blogs/{blog:slug}', function(Blog $blog){
-    dd('hit');
     return view('blogs',[
         'blogs'=>$blog
+    ]);
+});
+
+Route::get('/blogs/details/{blog:slug}', function(Blog $blog){
+    return view('blogDetail',[
+        'currentBlog'=>$blog,
+        'categories'=>Category::all(),
+        'blogs'=>Blog::all()
     ]);
 });
 

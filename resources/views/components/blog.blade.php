@@ -7,6 +7,6 @@
             <a href="/authors/{{$blog->user->name}}" class=" font-semibold  text-slate-700 ">By {{$blog->user->name}} -- {{$blog->created_at->diffForHumans()}}</a>
             <a href="/categories/{{$blog->category->slug}}" class=" cursor-pointer font-semibold text-blue-600">{{$blog->category->name}}</a>                        
         <p class=" text-slate-700 text-md leading-8 ">{{$blog->body}}</p>
-        <button class=" w-fit p-2 rounded bg-blue-600 text-white border-none hover:bg-blue-900 transition-all duration delay-75">Continue Reading-></button>
+        <a href="/blogs/details/{{$blog->slug}}" class=" w-fit p-2 rounded bg-blue-600 text-white border-none hover:bg-blue-900 transition-all duration delay-75">Continue Reading-></a>
     </div>
 </div>

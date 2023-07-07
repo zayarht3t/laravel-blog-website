@@ -1,5 +1,5 @@
 <div class="w-full py-6 h-14 flex items-center justify-center mb-20 mt-5  top-0">
-    <nav class=" py-16 px-5 w-full md:w-4/6 flex items-center justify-between fixed">
+    <nav class=" nav py-16 px-5 w-full md:w-4/6 flex items-center justify-between fixed">
         <div class="">
             <h1 class=" font-extrabold text-4xl  text-slate-600 cursor-pointer">Medis</h1>
         </div>

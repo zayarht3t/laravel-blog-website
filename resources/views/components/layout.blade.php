@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     @vite('resources/css/app.css')
+    <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
 </head>
 <body class="w-full h-full">
     <x-navbar/>

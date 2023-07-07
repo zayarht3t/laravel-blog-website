@@ -6,6 +6,6 @@
         </div>    
         @endforeach
     </div>
-    <x-paginator/>
+    <x-paginator :categories="$categories" :currentCategory="$currentCategory??null"/>
 </x-layout>
 
