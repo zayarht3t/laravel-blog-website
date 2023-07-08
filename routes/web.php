@@ -18,13 +18,13 @@ use App\Http\Controllers\BlogController;
 
 Route::get('/',[BlogController::class,'index']);
 
-Route::get('/categories/{category:slug}', function(Category $category){
-    return view('blogs',[
-        'blogs'=>$category->blogs,
-        'categories'=>Category::all(),
-        'currentCategory'=>$category
-    ]);
-});
+// Route::get('/categories/{category:slug}', function(Category $category){
+//     return view('blogs',[
+//         'blogs'=>$category->blogs,
+//         'categories'=>Category::all(),
+//         'currentCategory'=>$category
+//     ]);
+// });
 
 Route::get('/blogs/{blog:slug}', function(Blog $blog){
     return view('blogs',[
@@ -35,7 +35,6 @@ Route::get('/blogs/{blog:slug}', function(Blog $blog){
 Route::get('/blogs/details/{blog:slug}', function(Blog $blog){
     return view('blogDetail',[
         'currentBlog'=>$blog,
-        'categories'=>Category::all(),
         'blogs'=>Blog::all()
     ]);
 });
