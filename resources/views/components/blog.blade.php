@@ -4,8 +4,8 @@
     </div>
     <div class="flex flex-col gap-6 p-3">
         <a class="font-bold text-2xl text-black" href="/blogs/{{$blog->slug}}">{{$blog->title}}</a>
-            <a href="/authors/{{$blog->user->name}}" class=" font-semibold  text-slate-700 ">By {{$blog->user->name}} -- {{$blog->created_at->diffForHumans()}}</a>
-            <a href="/categories/{{$blog->category->slug}}" class=" cursor-pointer font-semibold text-blue-600">{{$blog->category->name}}</a>                        
+            <a href="/?username={{$blog->user->name}}" class=" font-semibold  text-slate-700 ">By {{$blog->user->name}} -- {{$blog->created_at->diffForHumans()}}</a>
+            <a href="/?category={{$blog->category->slug}}" class=" cursor-pointer font-semibold text-blue-600">{{$blog->category->name}}</a>                        
         <p class=" text-slate-700 text-md leading-8 ">{{$blog->body}}</p>
         <a href="/blogs/details/{{$blog->slug}}" class=" w-fit p-2 rounded bg-blue-600 text-white border-none hover:bg-blue-900 transition-all duration delay-75">Continue Reading-></a>
     </div>

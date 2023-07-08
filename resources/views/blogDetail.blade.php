@@ -12,7 +12,7 @@
             </div>
             <p class="w-[60%] text-lg font-serif text-center">{{$currentBlog->body}}</p>
         </div>
-        <x-paginator />
+        <x-paginator :blogs="$blogs"/>
         <div class="flex h-full flex-col items-center gap-8 w-full justify-center mb-5">
             @foreach ($blogs as $blog )
             <div class="flex w-4/6 flex-col  justify-between gap-10">

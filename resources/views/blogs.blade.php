@@ -6,6 +6,6 @@
         </div>    
         @endforeach
     </div>
-    <x-paginator/>
+    <x-paginator :blogs="$blogs"/>
 </x-layout>
 
