@@ -9,8 +9,9 @@
                 <p class="font-semibold font-sans text-slate-600 text-md">Date - {{$currentBlog->created_at->diffForHumans()}}</p>
                 <a href="" class=" w-fit p-1 text-sm bg-orange-300 text-black rounded">{{$currentBlog->category->name}}</a>
             </div>
-            <p class="w-[60%] text-lg font-serif text-center">{{$currentBlog->body}}</p>
+            <p class="md:w-[60%] text-lg font-serif text-center">{{$currentBlog->body}}</p>
         </div>
+        <x-comment :comments="$currentBlog->comments"/>
         <x-paginator :blogs="$blogs"/>
         <div class="flex h-full flex-col items-center gap-8 w-full justify-center mb-5">
             @foreach ($blogs as $blog )
@@ -19,5 +20,6 @@
             </div>    
             @endforeach
         </div>
+
     </x-wrapper>
 </x-layout>
