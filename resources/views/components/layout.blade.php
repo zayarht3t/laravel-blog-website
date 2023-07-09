@@ -10,6 +10,15 @@
 </head>
 <body class="w-full h-full">
     <x-navbar/>
+    @if (session('success'))
+        <x-wrapper>
+            <div class="p-4 mb-4 text-lg font-bold text-green-800 rounded-lg bg-green-50 " role="alert">
+            <span class="font-medium">{{session('success')}}</span>
+            </div>
+        </x-wrapper>        
+    @endif
+
+      
     {{$slot}}
     <x-footer/>
 </body>

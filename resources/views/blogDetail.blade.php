@@ -1,5 +1,4 @@
 
-
 <x-layout>
     <x-wrapper>
         <div class="my-4 flex flex-col gap-5 items-center justify-center">

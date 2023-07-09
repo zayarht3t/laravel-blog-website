@@ -6,7 +6,7 @@
     <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
         @foreach ($categories as $category )
         <li>
-            <a href="/?category={{$category->slug}}{{request('search') ? '&search='.request('search') : ''}}{{request('username') ? '&username='.request('username') : ''}}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">{{$category->name}}</a>
+            <a href="/?category={{$category->slug}}{{request('username') ? '&username='.request('username') : ''}}{{request('search') ? '&search='.request('search') : ''}}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">{{$category->name}}</a>
         </li>            
         @endforeach
     </ul>

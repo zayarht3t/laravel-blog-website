@@ -1,3 +1,4 @@
+
 <x-wrapper>
         {{$blogs->links()}}
         <h1 class="text-4xl font-bold font-sans text-black">UIT BLOGS</h1>

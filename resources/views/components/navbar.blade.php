@@ -9,7 +9,16 @@
             <a class=" font-bold text-slate-800 text-lg hover:text-blue-900 hover:underline transition-all duration-100" href="0">ABOUT</a>
             <a class=" font-bold text-slate-800 text-lg hover:text-blue-900 hover:underline transition-all duration-100" href="0">CONTACT</a>
             <a class=" font-bold text-slate-800 text-lg hover:text-blue-900 hover:underline transition-all duration-100" href="#subscribe">SUBSCRIBE</a>
-            <button class="px-4 py-2 bg-blue-700 rounded-md text-white border-none cursor-pointer">SIGNIN</button>
+            @guest
+                <a class="px-4 py-2 bg-blue-700 rounded-md text-white border-none cursor-pointer" href="/login">SIGNIN</a>
+            @else
+                <div class="flex gap-5 flex-col items-center">
+                    <div class="w-6 h-6 rounded-full bg-green-300"></div>
+                    <p>{{auth()->user()->name}}</p>
+                </div>
+                
+            @endguest
+            
         </div>
     </nav>
 </div>

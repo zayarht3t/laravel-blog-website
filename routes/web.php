@@ -5,6 +5,7 @@ use App\Models\Blog;
 use App\Models\Category;
 use App\Models\User;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,7 +36,7 @@ Route::get('/blogs/{blog:slug}', function(Blog $blog){
 Route::get('/blogs/details/{blog:slug}', function(Blog $blog){
     return view('blogDetail',[
         'currentBlog'=>$blog,
-        'blogs'=>Blog::all()
+        'blogs'=>Blog::latest()->paginate(3)->withQueryString()
     ]);
 });
 
@@ -45,4 +46,8 @@ Route::get('/authors/{author:name}', function(User $author){
     ]);
 });
 
+Route::get('/register', [AuthController::class,'create'])->middleware('guest');
+Route::post('/register', [AuthController::class,'store'])->middleware('guest');
+Route::get('/login', [AuthController::class,'login'])->middleware('guest');
+Route::post('/login', [AuthController::class,'storeLogin'])->middleware('guest');
 
