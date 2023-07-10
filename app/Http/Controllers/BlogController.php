@@ -17,4 +17,14 @@ class BlogController extends Controller
         ]);
     }
 
+    public function subscriptionHandler(Blog $blog){
+        if(auth()->user()->isSubscribed($blog)){
+            $blog->unSubscribe();
+        }else{
+            $blog->subscribe();
+        }
+
+        return back();
+    }
+
 }

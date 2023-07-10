@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Blog;
 use App\Models\Category;
 use App\Models\User;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\AuthController;
 /*
@@ -51,3 +52,5 @@ Route::post('/register', [AuthController::class,'store'])->middleware('guest');
 Route::get('/login', [AuthController::class,'login'])->middleware('guest');
 Route::post('/login', [AuthController::class,'storeLogin'])->middleware('guest');
 
+Route::post('/blogs/{blog:slug}/comment',[CommentController::class,'store'])->middleware('auth');
+Route::post('/blogs/{blog:slug}/subscription',[BlogController::class,'subscriptionHandler'])->middleware('auth');;
