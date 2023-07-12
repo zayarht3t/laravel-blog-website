@@ -10,12 +10,7 @@ class Blog extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        "title",
-        "intro",
-        "body"
-    ];
-
+    protected $guarded = [];
     protected $with = ['category', 'user'];
 
     public function scopeFilter($query,$filter){

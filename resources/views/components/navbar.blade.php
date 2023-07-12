@@ -13,8 +13,11 @@
                 <a class="px-4 py-2 bg-blue-700 rounded-md text-white border-none cursor-pointer" href="/login">SIGNIN</a>
             @else
                 <div class="flex gap-5 flex-col items-center">
-                    <div class="w-6 h-6 rounded-full bg-green-300"></div>
                     <p>{{auth()->user()->name}}</p>
+                    <form action="/logout" method="POST">
+                        @csrf
+                        <button class="p-2 bg-orange-500 border-none rounded text-white">LOGOUT</button>
+                    </form>
                 </div>
                 
             @endguest

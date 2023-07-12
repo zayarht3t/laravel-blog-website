@@ -1,6 +1,6 @@
 <div class="card flex cursor-pointer {{$loop ? 'flex-row-reverse' : ''}}  justify-between w-full  gap-10 px-5 mb-5">
     <div class="w-full h-auto">
-        <img src="https://images.pexels.com/photos/3098970/pexels-photo-3098970.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" srcset="">
+        <img src="/storage/{{$blog->img_path ? $blog->img_path : 'https://images.pexels.com/photos/3098970/pexels-photo-3098970.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load'}}" alt="" srcset="">
     </div>
     <div class="flex flex-col gap-6 p-3">
         <a class="font-bold text-2xl text-black" href="/blogs/{{$blog->slug}}">{{$blog->title}}</a>

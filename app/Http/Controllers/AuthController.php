@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Auth;
 class AuthController extends Controller
 {
     public function create(){
@@ -47,6 +48,11 @@ class AuthController extends Controller
             "email"=> "user creaditionals wrong"
         ]);
        }
+    }
+
+    public function logout(){
+        Auth::logout();
+        return back()->with('success', 'Goodbye');
     }
    
 }
